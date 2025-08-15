@@ -20,7 +20,7 @@ def random_allocate_samples(file_path, city_sample_dict, min_per_ward, output_fi
         xa_needed = wards_needed - phuong_needed
 
         if phuong_needed > len(phuong_wards) or xa_needed > len(xa_wards):
-            raise ValueError(f"Không đủ phường/xã để phân bổ cho thành phố {city_code}!")
+            raise ValueError(f"Không đủ phường/xã để phân bổ cho {city_df['Tỉnh / Thành Phố'].iloc[0]}!")
 
         selected_phuong = np.random.choice(phuong_wards, size=phuong_needed, replace=False) if phuong_needed > 0 else []
         selected_xa = np.random.choice(xa_wards, size=xa_needed, replace=False) if xa_needed > 0 else []
@@ -52,7 +52,7 @@ def random_allocate_samples(file_path, city_sample_dict, min_per_ward, output_fi
 #_______ input information ___________
 #_____________________________________
 Input_city_sample_dict = {
-    79: 120,
+    79: 3000,
     1: 80
 }
 
